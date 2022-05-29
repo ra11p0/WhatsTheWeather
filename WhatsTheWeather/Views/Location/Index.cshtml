@@ -1,0 +1,24 @@
+﻿@model WhatsTheWeather.ViewModels.Location.LocationViewModel
+<div class="card">
+    <div class="card-header">
+        <div class="h1 card-title"> @Model.WeatherResponse?.Name</div>
+    </div>
+    <div class="card-body">
+        <div class="d-flex flex-wrap flex-row justify-content-center">
+            @foreach (var forecastRecord in Model.Forecast.ForecastRecords)
+            {
+                <div class="card" style="width: 12rem">
+                    <div class="card-header">
+                        <div class="fw-bold">Date</div>
+                        @forecastRecord.DateTimeString
+                    </div>
+                    <div class="ms-2 me-auto card-body">
+                        <div class="fw-bold">Feels like</div>
+                        @forecastRecord.Temperature.FeelsLike
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>

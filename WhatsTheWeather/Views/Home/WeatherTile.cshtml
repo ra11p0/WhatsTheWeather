@@ -1,0 +1,55 @@
+﻿@model WhatsTheWeatherLogic.Dtos.WeatherResponse
+<a class="card text-decoration-none text-dark" style="width: 18rem" asp-action="Index" asp-controller="Location" asp-route-cityName="@Model.Name">
+    <div class="card-header">
+        <div class="card-title h2">@Model.Name</div>
+    </div>
+    <div class="card-body">
+        <div class="h3">@Model.DefaultWeather.CityName</div>
+        <div class="h4">@Model.DefaultWeather.Description</div>
+        <table class="table table-sm">
+            <tr class="d-table-row">
+                <td>
+                    Max temperature
+                </td>
+                <td>
+                    @Model.Temperature.MaximalTemperature
+                </td>
+            </tr>
+            <tr class="d-table-row">
+                <td>
+                    Min temperature
+                </td>
+                <td>
+                    @Model.Temperature.MinimalTemperature
+                </td>
+            </tr>
+            <tr class="d-table-row">
+                <td>
+                    Feels like
+                </td>
+                <td>
+                    @Model.Temperature.FeelsLike
+                </td>
+            </tr>
+            <tr class="d-table-row">
+                <td>
+                    Pressure
+                </td>
+                <td>
+                    @Model.Temperature.Pressure hPa
+                </td>
+            </tr>
+            <tr class="d-table-row">
+                <td>
+                    Humidity
+                </td>
+                <td>
+                    @Model.Temperature.Humidity%
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        Checked @Model.HowManyChecked times!
+    </div>
+</a>

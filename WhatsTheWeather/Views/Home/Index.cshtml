@@ -1,0 +1,8 @@
+﻿@model WhatsTheWeather.ViewModels.IndexViewModel
+
+<div class="d-flex flex-wrap flex-row gap-2 justify-content-center">
+    @foreach (var response in Model.WeatherResponses)
+    {
+        <partial name="WeatherTile" model="response"/>
+    }
+</div>

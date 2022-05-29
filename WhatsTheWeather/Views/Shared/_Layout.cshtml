@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Whats the weather?!</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar bg-light text-dark m-1 p-1">
+    <div class="container-fluid">
+        <a class="navbar-brand h1 text-decoration-none text-dark" asp-controller="Home" asp-action="Index"> Whats the weather?! </a>
+        <form class="d-flex" role="search" method="get" asp-controller="Location" asp-action="Index">
+            <input name="cityName" type="search" class="form-control me-2" placeholder="Search location..." aria-label="Search"/>
+            <button type="submit" class="btn btn-outline-primary"> Search </button>
+        </form>
+    </div>
+</nav>
+<div class="m-1 p-1">
+    @RenderBody()
+</div>
+</body>
+</html>
